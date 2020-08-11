@@ -1,0 +1,22 @@
+[RoutePrefix("api/v1/comment")]
+
+[HttpGet]
+[Route("")]
+public async Task<IHttpActionResult> GetComments(int userId = 0) {
+
+I’ll have this return a list of Comment objects.  If you include a userId, then it will return only comments by that user. Otherwise all.
+
+
+[HttpPost]
+[Route("")]
+public IHttpActionResult SaveComment([FromBody] Comment comment)
+
+
+public class Comment
+{
+    public int? CommentId { get; set; }
+    public string CommentText { get; set; }
+    public int UserId { get; set; }
+    public DateTime CreatedTimestamp { get; set; }
+}
+
