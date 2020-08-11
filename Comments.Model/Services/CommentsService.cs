@@ -64,11 +64,21 @@ namespace Comments.Model {
 			using (SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=C:\\temp\\CommentsDb.sqlite;Version=3;")) {
 				m_dbConnection.Open();
 
-				string sql = "insert into Comments(CommentId, CommentText, UserId, CreatedTimestamp) values (" + comment.CommentId + ", '" + comment.CommentText.Replace("'", "''") + "', " + comment.UserId + ", datetime('now'))";
+
+				string sql = "select max(CommentId) as CommentId from Comments";
 				SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
 				SQLiteDataReader reader = command.ExecuteReader();
-
 				while (await reader.ReadAsync()) {
+					comment.CommentId = reader.GetInt32(reader.GetOrdinal("CommentId")) + 1;
+				}
+				comment.CreatedTimestamp = DateTime.Now;
+				Int32 unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+
+				sql = "insert into Comments(CommentId, CommentText, UserId, CreatedTimestamp) values (" + comment.CommentId + ", '" + comment.CommentText.Replace("'", "''") + "', " + comment.UserId + ", datetime(" + unixTimestamp.ToString() + ", 'unixepoch'))";
+				command = new SQLiteCommand(sql, m_dbConnection);
+				SQLiteDataReader readerAdd = command.ExecuteReader();
+
+				while (await readerAdd.ReadAsync()) {
 				
 				}
 				return comment;
