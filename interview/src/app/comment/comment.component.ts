@@ -27,6 +27,7 @@ export class CommentComponent implements OnInit {
     this.comment = new Comment('', this.user.id, new Date());
     this.users = await this.userService.get();
     this.comments = await this.commentService.get();
+    return;
   }
 
   public getUserName(id: number): string {

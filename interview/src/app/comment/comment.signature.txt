@@ -1,4 +1,4 @@
-[RoutePrefix("api/v1/comment")]
+[RoutePrefix("api/comments")]
 
 [HttpGet]
 [Route("")]
