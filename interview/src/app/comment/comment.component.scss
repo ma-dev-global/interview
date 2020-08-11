@@ -1,0 +1,83 @@
+.container {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: lightcyan;
+	padding-bottom: 20px;
+}
+.row {
+	display: flex;
+	h1 {
+		margin: 10px;
+		padding: 10px;
+	}
+	&.input {
+		border: 1px solid grey;
+		border-radius: 5px;
+		background-color: white;
+		margin: 10px;
+		
+	}
+	.col{
+		flex: 1;
+	}
+}
+
+.comment-list {
+	.comment {
+		border: 1px solid lightgrey;
+		border-radius: 5px;
+		background-color: white;
+		padding: 10px;
+		margin: 10px;
+		.header {
+			width: 100%;
+			b {
+				margin-left: 0;
+			}
+
+			i {
+				float: right;
+			}
+		}
+	}
+}
+
+form {
+	h1 {
+		text-align: center;
+	}
+
+	.form-group {
+		padding: 10px;
+		display: flex;
+		flex-wrap: wrap;
+		
+		label {
+			flex: 1;
+			padding-right: 10px;
+			text-align: end;
+			font-weight: bold;
+			&::after {
+				content: ':';
+			}
+		}
+
+		input, textarea {
+			flex: 1;
+		}
+
+		button {
+			width: 50%;
+    		margin-left: auto;
+		}
+
+		.error {
+			flex-basis: 100%;
+			text-align: right;
+			padding-top: 10px;
+			color: red;
+			font-weight: bold;
+		}
+	}
+}
