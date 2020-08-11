@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comments.Api.Int.v1", "Comm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comments.Model", "Comments.Model\Comments.Model.csproj", "{013E960B-E089-4F4F-AD13-787F24FDBA64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comments.Web", "Comments.Web\Comments.Web.csproj", "{27A7AD83-165A-4342-95FC-8A4FA406191C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{013E960B-E089-4F4F-AD13-787F24FDBA64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{013E960B-E089-4F4F-AD13-787F24FDBA64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{013E960B-E089-4F4F-AD13-787F24FDBA64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A7AD83-165A-4342-95FC-8A4FA406191C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A7AD83-165A-4342-95FC-8A4FA406191C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A7AD83-165A-4342-95FC-8A4FA406191C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A7AD83-165A-4342-95FC-8A4FA406191C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
