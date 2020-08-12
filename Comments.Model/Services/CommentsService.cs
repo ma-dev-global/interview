@@ -50,7 +50,7 @@ namespace Comments.Model {
 				while (await reader.ReadAsync()) {
 					comments.Add(new Comment() {
 						CommentId = reader.GetInt32(reader.GetOrdinal("CommentId")),
-						CommentText = reader.IsDBNull(reader.GetOrdinal("Comment_Text")) ? null : reader.GetString(reader.GetOrdinal("Comment_Text")),
+						CommentText = reader.IsDBNull(reader.GetOrdinal("CommentText")) ? null : reader.GetString(reader.GetOrdinal("Comment_Text")),
 						UserId = reader.GetInt32(reader.GetOrdinal("UserId")),
 						CreatedTimestamp = reader.IsDBNull(reader.GetOrdinal("CreatedTimestamp")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("CreatedTimestamp"))
 					});

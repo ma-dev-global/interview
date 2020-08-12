@@ -16,9 +16,9 @@ namespace Comments.Api.Int.v1
 
 		[HttpGet]
 		[Route("")]
-		public IHttpActionResult GetComments(int userId = 0) {
+		public async Task<IHttpActionResult> GetComments(int userId = 0) {
 			using (CommentsService commentsSvc = new CommentsService()) {
-				IEnumerable<Comment> commentsTask = commentsSvc.GetComments(userId);
+				IEnumerable<Comment> commentsTask = await commentsSvc.GetComments(userId);
 				return Ok(commentsTask);
 			}
 		}
